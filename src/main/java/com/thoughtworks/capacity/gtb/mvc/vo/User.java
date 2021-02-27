@@ -20,8 +20,8 @@ public class User {
     @Pattern(regexp = "\\w+$", message = "用户名不合法")
     private String username;
 
-    @Size(min = 5, max = 12, message = "密码不合法")
     @NotBlank(message = "密码是不为空")
+    @Size(min = 5, max = 12, message = "密码不合法")
     private String password;
 
     @Email(message = "邮箱地址不合法")

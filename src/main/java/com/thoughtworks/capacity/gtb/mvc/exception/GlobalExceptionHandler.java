@@ -30,10 +30,11 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<ErrorResult> handle(ConstraintViolationException ex) {
+
         Set<ConstraintViolation<?>> violations = ex.getConstraintViolations();
 
         String message = "";
-        for (ConstraintViolation<?> constraint : ex.getConstraintViolations()) {
+        for (ConstraintViolation<?> constraint : violations) {
             message = constraint.getMessage();
             break;
         }
